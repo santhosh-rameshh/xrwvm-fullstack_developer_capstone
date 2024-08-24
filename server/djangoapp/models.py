@@ -1,6 +1,7 @@
 import datetime
 from django.db import models
 
+
 # Car Make model
 class CarMake(models.Model):
     name = models.CharField(null=False, max_length=50)
@@ -72,8 +73,8 @@ class CarDealer:
 
 # A plain Python class to hold review data
 class DealerReview:
-    def __init__(self, dealership, id, name, purchase, review, 
-                 car_make=None, car_model=None, car_year=None, 
+    def __init__(self, dealership, id, name, purchase, review,
+                 car_make=None, car_model=None, car_year=None,
                  purchase_date=None, sentiment="neutral"):
         self.car_make = car_make
         self.car_model = car_model
