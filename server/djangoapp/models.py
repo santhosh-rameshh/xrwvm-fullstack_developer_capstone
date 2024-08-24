@@ -1,6 +1,6 @@
 import datetime
 from django.db import models
-from django.utils.timezone import now
+#from django.utils.timezone import now
 
 
 # Car Make model
@@ -31,10 +31,13 @@ class CarModel(models.Model):
     BIKE = "Bike"
     SCOOTER = "Scooter"
     OTHER = "Other"
-    CAR_CHOICES = [(SEDAN, "Sedan"), (SUV, "SUV"), (WAGON, "Station wagon"), (SPORT, "Sports Car"),
-                   (COUPE, "Coupe"), (MINIVAN, "Mini van"), (VAN,
-                                                             "Van"), (PICKUP, "Pick-up truck"),
-                   (TRUCK, "Truck"), (BIKE, "Motor bike"), (SCOOTER, "Scooter"), (OTHER, 'Other')]
+    CAR_CHOICES = [(SEDAN, "Sedan"), (SUV, "SUV"), 
+                   (WAGON, "Station wagon"), 
+                   (SPORT, "Sports Car"),
+                   (COUPE, "Coupe"), (MINIVAN, "Mini van"), 
+                   (VAN, "Van"), (PICKUP, "Pick-up truck"),
+                   (TRUCK, "Truck"), (BIKE, "Motor bike"), 
+                   (SCOOTER, "Scooter"), (OTHER, 'Other')]
     model_type = models.CharField(
         null=False, max_length=15, choices=CAR_CHOICES, default=SEDAN)
 
@@ -51,7 +54,8 @@ class CarModel(models.Model):
 
 # A plain Python class to hold dealer data
 class CarDealer:
-    def __init__(self, address, city, full_name, id, lat, long, short_name, st, state, zip):
+    def __init__(self, address, city, full_name, 
+                 id, lat, long, short_name, st, state, zip):
         self.address = address
         self.city = city
         self.full_name = full_name  # Full name of dealership
@@ -70,7 +74,9 @@ class CarDealer:
 
 # A plain Python class to hold review data
 class DealerReview:
-    def __init__(self, dealership, id, name, purchase, review, car_make=None, car_model=None, car_year=None, purchase_date=None, sentiment="neutral"):
+    def __init__(self, dealership, id, name, purchase, review, 
+                 car_make=None, car_model=None, car_year=None, 
+                 purchase_date=None, sentiment="neutral"):
         self.car_make = car_make
         self.car_model = car_model
         self.car_year = car_year
