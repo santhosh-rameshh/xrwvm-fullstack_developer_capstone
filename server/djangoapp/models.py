@@ -1,7 +1,5 @@
 import datetime
 from django.db import models
-#from django.utils.timezone import now
-
 
 # Car Make model
 class CarMake(models.Model):
@@ -31,12 +29,12 @@ class CarModel(models.Model):
     BIKE = "Bike"
     SCOOTER = "Scooter"
     OTHER = "Other"
-    CAR_CHOICES = [(SEDAN, "Sedan"), (SUV, "SUV"), 
-                   (WAGON, "Station wagon"), 
+    CAR_CHOICES = [(SEDAN, "Sedan"), (SUV, "SUV"),
+                   (WAGON, "Station wagon"),
                    (SPORT, "Sports Car"),
-                   (COUPE, "Coupe"), (MINIVAN, "Mini van"), 
+                   (COUPE, "Coupe"), (MINIVAN, "Mini van"),
                    (VAN, "Van"), (PICKUP, "Pick-up truck"),
-                   (TRUCK, "Truck"), (BIKE, "Motor bike"), 
+                   (TRUCK, "Truck"), (BIKE, "Motor bike"),
                    (SCOOTER, "Scooter"), (OTHER, 'Other')]
     model_type = models.CharField(
         null=False, max_length=15, choices=CAR_CHOICES, default=SEDAN)
@@ -54,7 +52,7 @@ class CarModel(models.Model):
 
 # A plain Python class to hold dealer data
 class CarDealer:
-    def __init__(self, address, city, full_name, 
+    def __init__(self, address, city, full_name,
                  id, lat, long, short_name, st, state, zip):
         self.address = address
         self.city = city
